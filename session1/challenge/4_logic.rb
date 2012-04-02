@@ -10,5 +10,34 @@
 # grade(15, true)   # => "B"
 
 def grade(num_books, reads_books)
-  # learn to use case here, tom.
+  case 
+  when num_books < 10
+    ( reads_books ? 'C' : 'D' )
+  when num_books <= 20
+    ( reads_books ? 'B' : 'C' )
+  else
+    'B'
+    'A' if reads_books #WHY DOESN'T THIS WORK?
+    ( reads_books ? 'A' : 'B' )
+  end
 end
+
+def test()
+  [
+  [ 0, false],
+  [ 5, false],
+  [10, false],
+  [15, false],
+  [20, false],
+  [25, false],
+  [ 0, true],
+  [ 5, true],
+  [10, true],
+  [15, true],
+  [20, true],
+  [25, true]
+  ] .each do |tc|
+    puts "#{tc[0]}  #{tc[1]}  #{grade(tc[0],tc[1]) }"
+  end
+end 
+#test
