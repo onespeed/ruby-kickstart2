@@ -4,10 +4,22 @@
 # pirates_say_arrrrrrrrr("Katy Perry is on the radio!")   # => "rya"
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
-def pirates_say_arrrrrrrrr(string)
+
+def non_working_pirates_say_arrrrrrrrr(string)
+  # This string scanning/matching doesn't handle an r after an r
   retstr = ""
   string.scan( /r./i ).each do |mtch|
     retstr << mtch[1]
+  end
+  retstr
+end
+
+def pirates_say_arrrrrrrrr(string)
+  retstr = ""
+  (0...string.length).each do |i|
+    if string[i] =~ /r/i
+      retstr << ( string[i+1] || "" ) # handle nil returned if string ends in 'r'
+    end
   end
   retstr
 end
