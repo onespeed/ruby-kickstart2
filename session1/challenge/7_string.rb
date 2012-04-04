@@ -14,7 +14,7 @@ def non_working_pirates_say_arrrrrrrrr(string)
   retstr
 end
 
-def pirates_say_arrrrrrrrr(string)
+def working_1_pirates_say_arrrrrrrrr(string)
   retstr = ""
   (0...string.length).each do |i|
     if string[i] =~ /r/i
@@ -24,6 +24,15 @@ def pirates_say_arrrrrrrrr(string)
   retstr
 end
 
+def pirates_say_arrrrrrrrr(string)
+  retstr = ""
+  string.split(//).each_cons(2) do | a, b |
+    retstr << b if a =~ /[rR]/
+  end
+  retstr
+end
+
+
 
 
 def test
@@ -32,12 +41,10 @@ def test
    "Katy Perry is on the radio!"  =>  "rya",
    "Pirates say arrrrrrrrr"       =>  "arrrrrrrr" 
   }
-
   td.each do | key, val |
     failmsg = ( pirates_say_arrrrrrrrr(key) == val ? 'pass' : "FAIL" )
     puts %Q{PSA(#{key}) = #{pirates_say_arrrrrrrrr(key)} ?==? #{val} -- #{failmsg} }
   end 
-
 end
 
-test
+test if __FILE__ == $0
