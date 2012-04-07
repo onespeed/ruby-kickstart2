@@ -18,8 +18,19 @@
 # remember you can try your program out with              $ ruby 2_input_output_control.rb
 # and when you think it is correct, you can test it with  $ rake 2:2
 
+
+# it seems like this could be shorter (tom 4/7/2012)
+
 def hi_hi_goodbye
-  # your code here
+  while true
+    puts "Enter a number"
+    inp = gets
+    puts "hi " * inp.to_i
+    if inp =~ /bye/i
+      puts "goodbye"
+      return 0
+    end
+  end 
 end
 
 

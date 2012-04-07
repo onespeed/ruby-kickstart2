@@ -8,5 +8,9 @@
 # "11\n7\n18\n" to standard output.
 
 def sum_difference_product
-  # your code goes here
+  x, y = gets.split(" ").map { |s| s.to_f } 
+  # split on space
+  # luckily, float works for integers in his tesss
+  puts x + y, x - y, x * y
+  
 end
