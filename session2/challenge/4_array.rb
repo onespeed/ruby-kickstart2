@@ -5,3 +5,7 @@
 # get_squares [9,3]                    # => [3]
 # get_squares [9,3,81]                 # => [3, 9]
 # get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
+
+def get_squares(arr)
+  arr.select {|it| arr.include?(it*it) } .sort
+end
