@@ -8,3 +8,11 @@
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+
+def alternate_words(line)
+  ret = []
+  line.scan(/\b(\S+)\b/).flatten.each_with_index do | it, i |
+    ret << it if i.even?
+  end
+  ret
+end
