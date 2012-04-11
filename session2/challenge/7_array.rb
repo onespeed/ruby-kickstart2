@@ -11,7 +11,7 @@
 
 def alternate_words(line)
   ret = []
-  line.scan(/\b(\S+)\b/).flatten.each_with_index do | it, i |
+  line.scan(/([\w']+)/).flatten.each_with_index do | it, i |
     ret << it if i.even?
   end
   ret
