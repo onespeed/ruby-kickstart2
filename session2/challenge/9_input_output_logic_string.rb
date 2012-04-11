@@ -23,8 +23,19 @@
 # GRANDMA:  HUH?! SPEAK UP, SONNY!
 # USER:     BYE
 
+def response(ln)
+  if ln != ln.upcase || ln == ""
+    "HUH?! SPEAK UP, SONNY!"
+  else
+    "NO, NOT SINCE 1938!"
+  end
+end
+      
+
 def deaf_grandma
-  
+  while ( ln = gets.chomp ) != "BYE"  do
+    puts response(ln)
+  end
 end
 
 
